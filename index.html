@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravinder Kunchala - DevOps Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.22.5/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #6b21a8);
+            color: #1f2937;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #1f2937; /* Changed from white to dark gray for contrast */
+            margin-bottom: 1.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, #3b82f6, #a855f7);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        .skill-chip {
+            display: inline-block;
+            background: linear-gradient(90deg, #3b82f6, #a855f7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            margin: 0.25rem;
+            font-size: 0.875rem;
+        }
+        .contact-link {
+            color: #3b82f6;
+            transition: color 0.3s ease;
+        }
+        .contact-link:hover {
+            color: #a855f7;
+        }
+        .project-card {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+        #scrollToTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #3b82f6;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .card {
+                padding: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="scrollToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+    <script type="text/babel">
+        function Portfolio() {
+            return (
+                <div className="max-w-5xl mx-auto p-6">
+                    {/* Header */}
+                    <header className="text-center mb-12">
+                        <h1 className="text-5xl font-bold text-white">Ravinder Kunchala</h1>
+                        <h2 className="text-2xl text-gray-200 mt-2">DevOps Engineer | Cloud Architect</h2>
+                        <div className="mt-6 flex flex-wrap justify-center gap-4 text-gray-100">
+                            <p>📍 Hyderabad, Telangana, India</p>
+                            <p>📧 <a href="mailto:kunchalaravinder93@gmail.com" className="contact-link">kunchalaravinder93@gmail.com</a></p>
+                            <p>📱 +91 9848191683</p>
+                        </div>
+                        <div className="mt-4 flex justify-center gap-6">
+                            <a href="https://github.com/kunchalaravinder93" className="contact-link font-semibold">GitHub</a>
+                            <a href="https://www.linkedin.com/in/ravinder-kunchala-71661b183/" className="contact-link font-semibold">LinkedIn</a>
+                        </div>
+                    </header>
+
+                    {/* Professional Summary */}
+                    <section className="card">
+                        <h2 className="section-title">About Me</h2>
+                        <p className="text-gray-700">
+                            I’m a dedicated DevOps Engineer with over 4 years of experience architecting scalable cloud solutions on AWS, Azure, and GCP. I specialize in automation, CI/CD pipelines, and infrastructure as code (IaC), delivering reliable and efficient systems. My expertise in Terraform, Kubernetes, Docker, and Ansible, combined with a proactive approach, ensures seamless deployments and robust cloud environments. I thrive in Agile settings, driving innovation through technology.
+                        </p>
+                    </section>
+
+                    {/* Technical Skills */}
+                    <section className="card">
+                        <h2 className="section-title">Technical Expertise</h2>
+                        <div className="flex flex-wrap gap-2">
+                            {['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'Jenkins', 'GitHub Actions', 'GitLab CI/CD', 'Azure DevOps', 'Terraform', 'CloudFormation', 'Ansible', 'Python', 'Bash', 'PowerShell', 'Prometheus', 'Grafana', 'CloudWatch', 'Azure Monitor', 'Git', 'VPC', 'IAM', 'Security Groups'].map(skill => (
+                                <span key={skill} className="skill-chip">{skill}</span>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Work Experience */}
+                    <section className="card">
+                        <h2 className="section-title">Professional Experience</h2>
+                        <div className="mb-6">
+                            <h3 className="text-xl font-semibold text-gray-800">Freelance Cloud & DevOps Engineer</h3>
+                            <p className="text-gray-600">Self-Employed | Remote | Jan 2024 – Present</p>
+                            <ul className="list-disc list-inside text-gray-700 mt-2">
+                                <li>Designed scalable AWS and Azure architectures, enhancing system reliability.</li>
+                                <li>Automated infrastructure with Terraform and Ansible, reducing deployment time by 40%.</li>
+                                <li>Built CI/CD pipelines for seamless application delivery.</li>
+                                <li>Optimized cloud costs by up to 25% through strategic resource management.</li>
+                                <li>Implemented monitoring with Prometheus and Grafana for proactive performance insights.</li>
+                            </ul>
+                        </div>
+                        <div className="mb-6">
+                            <h3 className="text-xl font-semibold text-gray-800">Senior Associate (DevOps Engineer)</h3>
+                            <p className="text-gray-600">Wipro | Hyderabad, Telangana | Dec 2022 – Jan 2024</p>
+                            <ul className="list-disc list-inside text-gray-700 mt-2">
+                                <li>Architected AWS infrastructure to support enterprise software development.</li>
+                                <li>Streamlined build and deployment processes, reducing errors by 35%.</li>
+                                <li>Established CI/CD pipelines with Jenkins and GitLab CI/CD.</li>
+                                <li>Monitored systems with CloudWatch and Grafana, achieving 99.9% uptime.</li>
+                                <li>Provided on-call support, resolving critical issues swiftly.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-semibold text-gray-800">Associate (DevOps Engineer)</h3>
+                            <p className="text-gray-600">Concentrix | Hyderabad, Telangana | May 2021 – Sep 2022</p>
+                            <ul className="list-disc list-inside text-gray-700 mt-2">
+                                <li>Deployed cloud applications on AWS using Terraform and Ansible.</li>
+                                <li>Automated infrastructure tasks, cutting provisioning time by 50%.</li>
+                                <li>Developed Python and Bash scripts for automation and log analysis.</li>
+                                <li>Configured monitoring tools to ensure system uptime.</li>
+                                <li>Supported CI/CD pipelines for efficient software releases.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    {/* Projects */}
+                    <section className="card">
+                        <h2 className="section-title">Key Projects</h2>
+                        <div className="project-card">
+                            <h3 className="text-lg font-semibold text-gray-800">Scalable Web Application on AWS</h3>
+                            <p className="text-gray-600">Built a highly available web app using AWS EC2, ECS, RDS, and S3.</p>
+                            <p><strong>Technologies:</strong> AWS, Terraform, Docker, Kubernetes</p>
+                            <p><strong>Impact:</strong> Reduced costs by 30% and enhanced scalability.</p>
+                        </div>
+                        <div className="project-card">
+                            <h3 className="text-lg font-semibold text-gray-800">Performance Monitoring Dashboard</h3>
+                            <p className="text-gray-600">Developed a real-time analytics dashboard with Prometheus and Grafana.</p>
+                            <p><strong>Technologies:</strong> Python, JMeter, CloudWatch, Grafana</p>
+                            <p><strong>Impact:</strong> Improved response times by 25% through proactive monitoring.</p>
+                        </div>
+                    </section>
+
+                    {/* Achievements */}
+                    <section className="card">
+                        <h2 className="section-title">Achievements</h2>
+                        <ul className="list-disc list-inside text-gray-700">
+                            <li>Cut system downtime by 30% with proactive monitoring strategies.</li>
+                            <li>Ensured compliance through robust logging and documentation practices.</li>
+                            <li>Streamlined deployments, reducing time to production by 40%.</li>
+                        </ul>
+                    </section>
+
+                    {/* Education */}
+                    <section className="card">
+                        <h2 className="section-title">Education</h2>
+                        <p className="text-gray-700">
+                            <strong>Bachelor's Degree in Electronics and Communications Engineering</strong><br />
+                            Malla Reddy College of Engineering & Technology, Hyderabad, Telangana<br />
+                            Graduated: 2016
+                        </p>
+                    </section>
+
+                    {/* Call to Action */}
+                    <section className="card text-center">
+                        <h2 className="section-title mx-auto">Let’s Build the Future Together</h2>
+                        <p className="text-gray-700 mb-4">I’m excited to bring my DevOps expertise to your team, driving innovation and efficiency. Let’s connect to discuss how I can contribute to your cloud and automation goals.</p>
+                        <a href="mailto:kunchalaravinder93@gmail.com" className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-full hover:from-blue-600 hover:to-purple-700 transition">Contact Me</a>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="text-center mt-12 text-gray-200">
+                        <p>© 2025 Ravinder Kunchala. All rights reserved.</p>
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<Portfolio />);
+    </script>
+</body>
+</html>
